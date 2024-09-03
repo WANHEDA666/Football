@@ -1,0 +1,31 @@
+{
+  "project_info": {
+    "project_number": "841031565255",
+    "project_id": "football-d0cd4",
+    "storage_bucket": "football-d0cd4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:841031565255:ios:afd2621e55f1553839e3e2",
+        "android_client_info": {
+          "package_name": "uk.co.awiclo.scorestyle"
+        }
+      },
+      "api_key": [
+        {
+          "current_key": "AIzaSyDs7a6ybNy1pvKlsr9iTNCL85ecTTEdefc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 0
+        },
+        "appinvite_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
