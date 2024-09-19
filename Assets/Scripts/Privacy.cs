@@ -18,7 +18,7 @@ public class Privacy : MonoBehaviour
     private void Start()
     {
         PlayerPrefs.SetInt("rocket" + 0, 1);
-        PlayerPrefs.SetInt("boot" + 0, 1);
+        PlayerPrefs.SetInt("boot" + 0, 1);              
         PlayerPrefs.SetInt("boot" + "x", 1);
         PlayerPrefs.SetInt("rocket" + "x", 1);
         privacy.onClick.AddListener((() =>

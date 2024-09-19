@@ -15,6 +15,7 @@ public class PingPong : MonoBehaviour
     [SerializeField] private GameObject startScreen;
     [SerializeField] private GameObject rocket;
     [SerializeField] private GameObject sc;
+    [SerializeField] private AudioSource audioSource;
 
     private Ball b;
     private GameObject r;
@@ -34,6 +35,11 @@ public class PingPong : MonoBehaviour
         };
         b.scored += () =>
         {
+            if (audioSource.isPlaying)
+            {
+                audioSource.Stop();
+            }
+            audioSource.Play();
             PlayerPrefs.SetInt("scorePingPong", PlayerPrefs.GetInt("scorePingPong") + (1 * PlayerPrefs.GetInt("rocket" + "x")));
             PlayerPrefs.SetInt("score", PlayerPrefs.GetInt("scorePingPong") + PlayerPrefs.GetInt("scoreFootball"));
             score.text = PlayerPrefs.GetInt("score").ToString();

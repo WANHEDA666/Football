@@ -28,7 +28,7 @@ public class FBall : MonoBehaviour
     
     private void FixedUpdate()
     {
-        if (bal.anchoredPosition.y < -400 && !failed)
+        if (bal.anchoredPosition.y < -600 && !failed)
         {
             if (boot.rotation.eulerAngles.magnitude < 300)
             {

@@ -15,6 +15,7 @@ public class Football : MonoBehaviour
     [SerializeField] private GameObject startScreen;
     [SerializeField] private GameObject boot;
     [SerializeField] private GameObject sc;
+    [SerializeField] private AudioSource audioSource;
     private bool locked;
     private float t;
     
@@ -36,6 +37,11 @@ public class Football : MonoBehaviour
         };
         fb.scored += () =>
         {
+            if (audioSource.isPlaying)
+            {
+                audioSource.Stop();
+            }
+            audioSource.Play();
             PlayerPrefs.SetInt("scoreFootball", PlayerPrefs.GetInt("scoreFootball") + (1 * PlayerPrefs.GetInt("boot" + "x")));
             PlayerPrefs.SetInt("score", PlayerPrefs.GetInt("scorePingPong") + PlayerPrefs.GetInt("scoreFootball"));
             score.text = PlayerPrefs.GetInt("score").ToString();

@@ -4,6 +4,10 @@ using UnityEngine.UI;
 public class Settings : MonoBehaviour
 {
     [SerializeField] private Button back;
+    
+    [SerializeField] private Button sound;
+    [SerializeField] private Image soundImage;
+    
     [SerializeField] private Button music;
     [SerializeField] private Image musicImage;
     [SerializeField] private Sprite musicOn;
@@ -24,6 +28,14 @@ public class Settings : MonoBehaviour
         {
             musicImage.sprite = musicOn;
         }
+        if (PlayerPrefs.GetInt("sound") == 1)
+        {
+            soundImage.sprite = musicOff;
+        }
+        else
+        {
+            soundImage.sprite = musicOn;
+        }
         back.onClick.AddListener((() =>
         {
             startScreen.gameObject.SetActive(true);
@@ -42,6 +54,19 @@ public class Settings : MonoBehaviour
                 musicImage.sprite = musicOn;
                 audioSource.Play();
                 PlayerPrefs.SetInt("music", 0);
+            }
+        }));
+        sound.onClick.AddListener((() =>
+        {
+            if (soundImage.sprite == musicOn)
+            {
+                soundImage.sprite = musicOff;
+                PlayerPrefs.SetInt("sound", 1);
+            }
+            else
+            {
+                soundImage.sprite = musicOn;
+                PlayerPrefs.SetInt("sound", 0);
             }
         }));
         privacy.onClick.AddListener((() =>
@@ -80,5 +105,6 @@ public class Settings : MonoBehaviour
         privacy.onClick.RemoveAllListeners();
         terms.onClick.RemoveAllListeners();
         feedback.onClick.RemoveAllListeners();
+        sound.onClick.RemoveAllListeners();
     }
 }

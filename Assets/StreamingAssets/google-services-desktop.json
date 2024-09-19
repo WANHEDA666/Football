@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:841031565255:ios:afd2621e55f1553839e3e2",
+        "mobilesdk_app_id": "1:841031565255:ios:a8db416e9edd38e939e3e2",
         "android_client_info": {
-          "package_name": "uk.co.awiclo.scorestyle"
+          "package_name": "com.hedax.football"
         }
       },
       "api_key": [
